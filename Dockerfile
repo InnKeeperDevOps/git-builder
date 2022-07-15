@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk install buildah
+RUN apk add buildah
 
 WORKDIR /code
 
