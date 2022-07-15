@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add buildah
+RUN apk add buildah git
 
 WORKDIR /code
 
