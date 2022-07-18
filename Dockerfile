@@ -1,6 +1,6 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk add buildah git
+RUN apt install buildah git
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
