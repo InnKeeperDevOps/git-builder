@@ -8,8 +8,6 @@ if test -f "$FILE"; then
     echo "$FILE exists."
 fi
 
-mkdir /src
-cd /src
 git clone $GIT_REPO .
 cd $WORKDIR
 
