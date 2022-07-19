@@ -12,9 +12,9 @@ mkdir ~/.ssh/
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
 
-cp /ssh/key /ssh_tmp_key
-chmod 0600 /ssh_tmp_key
-ssh-agent bash -c 'ssh-add /ssh_tmp_key; git clone $GIT_REPO .'
+cp /ssh/key ~/.ssh/id_rsa
+chmod 0600 ~/.ssh/id_rsa
+git clone $GIT_REPO .
 cd $WORKDIR
 
 buildah build -f $DOCKERFILE -t $DOCKER_TAG:$DOCKER_VERSION .
