@@ -19,6 +19,6 @@ cd $WORKDIR
 
 buildah build -f $DOCKERFILE -t $REGISTRY_HOST/$DOCKER_TAG:$DOCKER_VERSION .
 
-echo $REGISTRY_PASSWORD | buildah login -u $REGISTRY_USERNAME --password-stdin
+echo $REGISTRY_PASSWORD | buildah login -u $REGISTRY_USERNAME --password-stdin $REGISTRY_HOST
 
 buildah push $REGISTRY_HOST/$DOCKER_TAG:$DOCKER_VERSION
