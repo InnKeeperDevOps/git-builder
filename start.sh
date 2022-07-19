@@ -8,7 +8,7 @@ if test -f "$FILE"; then
     echo "$FILE exists."
 fi
 
-GIT_SSH_COMMAND="ssh -i /ssh/key" git clone $GIT_REPO .
+git clone $GIT_REPO . -key "/ssh/key"
 cd $WORKDIR
 
 buildah build -f $DOCKERFILE -t $DOCKER_TAG:$DOCKER_VERSION .
