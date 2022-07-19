@@ -1,6 +1,4 @@
-FROM ubuntu:latest
-
-RUN apt-get -y update && apt-get -y install buildah git
+FROM ghcr.io/synload/buildah-root:main
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
