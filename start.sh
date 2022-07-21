@@ -22,7 +22,8 @@ if [[ -z "${GIT_COMMIT}" ]]; then
 fi
 
 echo "==="
-git log -1 --pretty=oneline
+git rev-parse --abbrev-ref HEAD
+git log -1 --pretty="Hash:%H, author:%an, date:%ct"
 echo "==="
 
 cd $WORKDIR
