@@ -23,7 +23,7 @@ fi
 
 echo "==="
 echo "branch:" `git rev-parse --abbrev-ref HEAD`
-git log -1 --pretty="Hash:%H, author:%an, date:%ct"
+git log -1 --pretty="hash:%H, author:%an, date:%ct"
 echo "==="
 
 cd $WORKDIR
