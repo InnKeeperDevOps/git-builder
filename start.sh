@@ -22,7 +22,7 @@ if [[ -z "${GIT_COMMIT}" ]]; then
 fi
 
 echo "==="
-git rev-parse --abbrev-ref HEAD
+echo "branch:" `git rev-parse --abbrev-ref HEAD`
 git log -1 --pretty="Hash:%H, author:%an, date:%ct"
 echo "==="
 
