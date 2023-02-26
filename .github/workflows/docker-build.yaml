@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: innkeeperdevops/git-builder
-  GITHUB_SHA: ${{ GITHUB_SHA }}
+  GITHUB_SHA: ${{ github.GITHUB_SHA }}
 jobs:
   build:
     runs-on: ubuntu-latest
