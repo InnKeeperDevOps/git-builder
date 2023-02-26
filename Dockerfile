@@ -5,4 +5,6 @@ RUN chmod +x /start.sh
 
 WORKDIR /src
 
+RUN env
+
 CMD /start.sh
