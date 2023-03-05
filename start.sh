@@ -25,10 +25,11 @@ echo "==="
 echo "branch:"`git rev-parse --abbrev-ref HEAD`
 git log -1 --pretty="hash:%H, author:%an, date:%ct"
 echo "==="
+hash=`git log -1 --pretty="%H"`
 
-buildah build -f $DOCKERFILE -t $REGISTRY_HOST/$DOCKER_TAG:$DOCKER_VERSION $WORKDIR
+buildah build -f $DOCKERFILE -t $REGISTRY_HOST/$DOCKER_TAG:$hash $WORKDIR
 
 echo $REGISTRY_PASSWORD | buildah login -u $REGISTRY_USERNAME --password-stdin $REGISTRY_HOST
 
-buildah push $REGISTRY_HOST/$DOCKER_TAG:$DOCKER_VERSION
+buildah push $REGISTRY_HOST/$DOCKER_TAG:$hash
 
